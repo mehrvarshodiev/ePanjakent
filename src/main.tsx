@@ -5,23 +5,20 @@ import InteractiveServicesPage from './ServicesPage'
 import './index.css'
 
 type Lang = 'TJ' | 'RU' | 'EN'
-type Theme = 'dark' | 'light'
-
 const languages: Lang[] = ['TJ', 'RU', 'EN']
 
 function Layout({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>('dark')
   const [lang, setLang] = useState<Lang>('TJ')
   const [menu, setMenu] = useState(false)
   const location = useLocation()
-  useEffect(() => { document.documentElement.dataset.theme = theme }, [theme])
+  useEffect(() => { document.documentElement.dataset.theme = 'light' }, [])
   useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior }); setMenu(false) }, [location.pathname])
   const nextLang = () => setLang(languages[(languages.indexOf(lang) + 1) % languages.length])
   return <div className="app-shell">
     <header className="topbar"><div className="nav-wrap">
       <Link to="/" className="brand"><span className="brand-mark">✦</span><span><b>ePanjakent</b><small>DIGITAL CITY</small></span></Link>
       <nav className="desktop-nav"><Link to="/news">Хабарҳо</Link><Link to="/tourism">Туризм</Link><Link to="/services">Хизматҳо</Link><Link to="/digital">Рақамӣ</Link><Link to="/appeals">Муроҷиатҳо</Link></nav>
-      <div className="nav-actions"><button onClick={nextLang} aria-label="Change language">🌐 <strong>{lang}</strong></button><button onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')} aria-label="Toggle theme">{theme === 'dark' ? '☀' : '☾'}</button><button className="menu-btn" onClick={() => setMenu(!menu)} aria-label="Open menu">{menu ? '×' : '☰'}</button></div>
+      <div className="nav-actions"><button onClick={nextLang} aria-label="Change language">🌐 <strong>{lang}</strong></button><button className="menu-btn" onClick={() => setMenu(!menu)} aria-label="Open menu">{menu ? '×' : '☰'}</button></div>
     </div>{menu && <div className="mobile-menu"><Link to="/news">Хабарҳо</Link><Link to="/tourism">Туризм</Link><Link to="/services">Хизматҳо</Link><Link to="/digital">Рақамӣ</Link><Link to="/appeals">Муроҷиатҳо</Link></div>}</header>
     <main>{children}</main>
     <footer><div className="footer-inner"><Link to="/" className="brand"><span className="brand-mark">✦</span><span><b>ePanjakent</b><small>DIGITAL CITY PORTAL</small></span></Link><p>© 2026 ePanjakent · Panjakent, Tajikistan</p><div>🇹🇯 🇷🇺 🇬🇧</div></div></footer>
