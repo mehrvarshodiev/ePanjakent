@@ -4,6 +4,7 @@ import { BrowserRouter, Link, Route, Routes, useLocation } from 'react-router-do
 import InteractiveServicesPage from './ServicesPage'
 import './index.css'
 import './overrides.css'
+import './light-overrides.css'
 
 type Lang = 'TJ' | 'RU' | 'EN'
 const languages: Lang[] = ['TJ', 'RU', 'EN']
