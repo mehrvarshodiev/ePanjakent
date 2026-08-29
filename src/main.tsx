@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Link, Route, Routes, useLocation } from 'react-router-dom'
 import InteractiveServicesPage from './ServicesPage'
 import './index.css'
+import './overrides.css'
 
 type Lang = 'TJ' | 'RU' | 'EN'
 const languages: Lang[] = ['TJ', 'RU', 'EN']
@@ -14,36 +15,12 @@ function Layout({ children }: { children: React.ReactNode }) {
   useEffect(() => { document.documentElement.dataset.theme = 'light' }, [])
   useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' as ScrollBehavior }); setMenu(false) }, [location.pathname])
   const nextLang = () => setLang(languages[(languages.indexOf(lang) + 1) % languages.length])
-  return <div className="app-shell">
-    <header className="topbar"><div className="nav-wrap">
-      <Link to="/" className="brand"><span className="brand-mark">✦</span><span><b>ePanjakent</b><small>DIGITAL CITY</small></span></Link>
-      <nav className="desktop-nav"><Link to="/news">Хабарҳо</Link><Link to="/tourism">Туризм</Link><Link to="/services">Хизматҳо</Link><Link to="/digital">Рақамӣ</Link><Link to="/appeals">Муроҷиатҳо</Link></nav>
-      <div className="nav-actions"><button onClick={nextLang} aria-label="Change language">🌐 <strong>{lang}</strong></button><button className="menu-btn" onClick={() => setMenu(!menu)} aria-label="Open menu">{menu ? '×' : '☰'}</button></div>
-    </div>{menu && <div className="mobile-menu"><Link to="/news">Хабарҳо</Link><Link to="/tourism">Туризм</Link><Link to="/services">Хизматҳо</Link><Link to="/digital">Рақамӣ</Link><Link to="/appeals">Муроҷиатҳо</Link></div>}</header>
-    <main>{children}</main>
-    <footer><div className="footer-inner"><Link to="/" className="brand"><span className="brand-mark">✦</span><span><b>ePanjakent</b><small>DIGITAL CITY PORTAL</small></span></Link><p>© 2026 ePanjakent · Panjakent, Tajikistan</p><div>🇹🇯 🇷🇺 🇬🇧</div></div></footer>
-  </div>
+  return <div className="app-shell"><header className="topbar"><div className="nav-wrap"><Link to="/" className="brand"><span className="brand-mark">✦</span><span><b>ePanjakent</b><small>DIGITAL CITY</small></span></Link><nav className="desktop-nav"><Link to="/news">Хабарҳо</Link><Link to="/tourism">Туризм</Link><Link to="/services">Хизматҳо</Link><Link to="/digital">Рақамӣ</Link><Link to="/appeals">Муроҷиатҳо</Link></nav><div className="nav-actions"><button onClick={nextLang} aria-label="Change language">🌐 <strong>{lang}</strong></button><button className="menu-btn" onClick={() => setMenu(!menu)} aria-label="Open menu">{menu ? '×' : '☰'}</button></div></div>{menu && <div className="mobile-menu"><Link to="/news">Хабарҳо</Link><Link to="/tourism">Туризм</Link><Link to="/services">Хизматҳо</Link><Link to="/digital">Рақамӣ</Link><Link to="/appeals">Муроҷиатҳо</Link></div>}</header><main>{children}</main><footer><div className="footer-inner"><Link to="/" className="brand"><span className="brand-mark">✦</span><span><b>ePanjakent</b><small>DIGITAL CITY PORTAL</small></span></Link><p>© 2026 ePanjakent · Panjakent, Tajikistan</p><div>🇹🇯 🇷🇺 🇬🇧</div></div></footer></div>
 }
-
-const news = [
-  { tag: 'ХАБАРҲО', title: 'Панҷакент: марҳилаи нави рушди шаҳри рақамӣ', text: 'Хизматрасониҳои муосир ва ташаббусҳои нави рақамӣ барои сокинон.', image: 'https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=85' },
-  { tag: 'ФАРҲАНГ', title: 'Мероси бостонии Панҷакент зинда аст', text: 'Гузаштаи пурғановати шаҳр қисми муҳими ояндаи он мебошад.', image: 'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=900&q=85' },
-  { tag: 'ЧОРАБИНӢ', title: 'Роҳнамои нави сайёҳӣ ба меҳмонон пешниҳод шуд', text: 'Масирҳои нав ба Панҷакенти қадим, Саразм ва Ҳафт Кӯл.', image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85' },
-]
-const services = [['01','Номнависии духтур','Духтур, беморхона, сана ва вақти мувофиқро онлайн интихоб кунед.','♥'],['02','Маълумотномаи судӣ','Барои гирифтани маълумотномаи судӣ дархост пешниҳод кунед.','✓'],['03','ИНН онлайн','Рақами мушаххаси андозсупорандаро дархост ё санҷед.','№'],['04','Шаҳодатномаи таваллуд','Маълумоти навзодро онлайн ирсол ва ҳуҷҷатҳоро бор кунед.','□']]
-const places = [['01','Панҷакенти қадим','HERITAGE','https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=1200&q=85'],['02','Саразм','UNESCO','https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=1200&q=85'],['03','Ҳафт Кӯл','NATURE','https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85']]
-
-function Home() { return <>
-  <section className="hero"><div className="hero-orb orb-one"/><div className="hero-orb orb-two"/><div className="hero-grid"/><div className="hero-content reveal visible">
-    <div className="eyebrow"><span/> ПАНҶАКЕНТ · ТОҶИКИСТОН</div>
-    <h1>МАҚОМОТИ ИҶРОИЯИ<br/><em>ҲОКИМИЯТИ МАҲАЛЛИИ<br/>ШАҲРИ ПАНҶАКЕНТ</em></h1>
-    <p>Шаҳри таърих ва оянда. Платформаи ягонаи рақамии Панҷакент барои хизматрасонӣ, хабарҳо, сайёҳӣ ва муроҷиати шаҳрвандон.</p>
-    <div className="hero-buttons"><Link to="/services" className="btn btn-primary">Хизматрасониҳо <span>→</span></Link><Link to="/tourism" className="btn btn-glass">Роҳнамои шаҳр <span>⌖</span></Link></div>
-  </div><div className="scroll-hint">SCROLL TO EXPLORE ↓</div></section>
-  <section className="section reveal"><SectionHeader number="01" label="NEWS BLOG" title="Блоги хабарҳо" link="Ҳама →"/><NewsGrid compact/></section>
-  <section className="services-section"><div className="section reveal"><SectionHeader number="02" label="E-GOVERNMENT" title="Хизматрасониҳои давлатӣ"/><ServiceGrid/></div></section>
-  <section className="section reveal"><SectionHeader number="03" label="EXPLORE" title="Роҳнамои туристии Панҷакент"/><PlacesGrid/></section><DigitalSection compact/><section className="section reveal"><Appeal/></section>
-</> }
+const news=[{tag:'ХАБАРҲО',title:'Панҷакент: марҳилаи нави рушди шаҳри рақамӣ',text:'Хизматрасониҳои муосир ва ташаббусҳои нави рақамӣ барои сокинон.',image:'https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1200&q=85'},{tag:'ФАРҲАНГ',title:'Мероси бостонии Панҷакент зинда аст',text:'Гузаштаи пурғановати шаҳр қисми муҳими ояндаи он мебошад.',image:'https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=900&q=85'},{tag:'ЧОРАБИНӢ',title:'Роҳнамои нави сайёҳӣ ба меҳмонон пешниҳод шуд',text:'Масирҳои нав ба Панҷакенти қадим, Саразм ва Ҳафт Кӯл.',image:'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85'}]
+const services=[['01','Номнависии духтур','Духтур, беморхона, сана ва вақти мувофиқро онлайн интихоб кунед.','♥'],['02','Маълумотномаи судӣ','Барои гирифтани маълумотномаи судӣ дархост пешниҳод кунед.','✓'],['03','ИНН онлайн','Рақами мушаххаси андозсупорандаро дархост ё санҷед.','№'],['04','Шаҳодатномаи таваллуд','Маълумоти навзодро онлайн ирсол ва ҳуҷҷатҳоро бор кунед.','□']]
+const places=[['01','Панҷакенти қадим','HERITAGE','https://images.unsplash.com/photo-1568322445389-f64ac2515020?auto=format&fit=crop&w=1200&q=85'],['02','Саразм','UNESCO','https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=1200&q=85'],['03','Ҳафт Кӯл','NATURE','https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85']]
+function Home(){return <><section className="hero"><div className="hero-orb orb-one"/><div className="hero-orb orb-two"/><div className="hero-grid"/><div className="hero-content reveal visible"><div className="eyebrow"><span/> ПАНҶАКЕНТ · ТОҶИКИСТОН</div><h1>МАҚОМОТИ ИҶРОИЯИ<br/><em>ҲОКИМИЯТИ МАҲАЛЛИИ<br/>ШАҲРИ ПАНҶАКЕНТ</em></h1><p>Шаҳри таърих ва оянда. Платформаи ягонаи рақамии Панҷакент барои хизматрасонӣ, хабарҳо, сайёҳӣ ва муроҷиати шаҳрвандон.</p><div className="hero-buttons"><Link to="/services" className="btn btn-primary">Хизматрасониҳо <span>→</span></Link><Link to="/tourism" className="btn btn-glass">Роҳнамои шаҳр <span>⌖</span></Link></div></div><div className="scroll-hint">SCROLL TO EXPLORE ↓</div></section><section className="section reveal"><SectionHeader number="01" label="NEWS BLOG" title="Блоги хабарҳо" link="Ҳама →"/><NewsGrid compact/></section><section className="services-section"><div className="section reveal"><SectionHeader number="02" label="E-GOVERNMENT" title="Хизматрасониҳои давлатӣ"/><ServiceGrid/></div></section><section className="section reveal"><SectionHeader number="03" label="EXPLORE" title="Роҳнамои туристии Панҷакент"/><PlacesGrid/></section><DigitalSection compact/><section className="section reveal"><Appeal/></section></>}
 function NewsPage(){return <PageHero label="NEWS BLOG" title="Блоги хабарҳо" intro="Ахбор, фарҳанг, чорабиниҳо ва эълонҳои муҳими Панҷакент дар як ҷо."><NewsGrid/></PageHero>}
 function ServicesPage(){return <PageHero label="E-GOVERNMENT" title="Хизматрасониҳои давлатӣ" intro="Хизматрасониҳои рақамиро зуд, шаффоф ва қулай истифода баред."><InteractiveServicesPage/></PageHero>}
 function TourismPage(){return <PageHero label="DISCOVER" title="Роҳнамои туристии Панҷакент" intro="Панҷакенти қадим, Саразм ва Ҳафт Кӯлро кашф кунед."><PlacesGrid/><div className="tourism-info"><div><b>Масири тавсияшуда</b><span>Панҷакенти қадим → Саразм → Ҳафт Кӯл</span></div><div><b>Ёрии фаврӣ</b><span>112 · Хадамоти наҷот · беморхона</span></div></div></PageHero>}
