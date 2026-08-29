@@ -6,7 +6,7 @@ import ModernFooter from './components/ModernFooter'
 import './index.css'
 import './overrides.css'
 import './light-overrides.css'
-import './modern-footer.css'
+import './premium-footer.css'
 
 type Lang = 'TJ' | 'RU' | 'EN'
 const languages: Lang[] = ['TJ', 'RU', 'EN']
