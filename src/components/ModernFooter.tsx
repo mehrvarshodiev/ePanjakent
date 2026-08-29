@@ -2,8 +2,12 @@ import { Link } from 'react-router-dom'
 
 const links = [
   ['Асосӣ', '/'],
+  ['Хабарҳо', '/news'],
   ['Таърих ва фарҳанг', '/history'],
-  ['Хизматрасониҳо', '/services'],
+  ['Туризм', '/tourism'],
+  ['Хизматҳо', '/services'],
+  ['Рақамӣ', '/digital'],
+  ['Муроҷиатҳо', '/appeals'],
 ]
 const socials = [
   ['Instagram', '◎'], ['Facebook', 'f'], ['Telegram', '✈'], ['YouTube', '▶'],
@@ -19,8 +23,8 @@ export default function ModernFooter() {
         <div className="footer-socials">{socials.map(([name, icon]) => <a href="#" key={name} aria-label={name} className="social-icon">{icon}</a>)}</div>
       </section>
       <section className="footer-column"><h3>Навигатсия</h3>{links.map(([name, to]) => <Link key={to} to={to}>{name}</Link>)}</section>
-      <section className="footer-column"><h3>Мероси Панҷакент</h3><Link to="/history">Саразм</Link><Link to="/history">Панҷакенти қадим</Link><Link to="/history">Мероси фарҳангӣ</Link></section>
-      <section className="footer-column"><h3>Дар тамос бошед</h3><p>Ахбор, рӯйдодҳо ва навгониҳои шаҳри Панҷакентро пайгирӣ кунед.</p><a className="footer-mail" href="mailto:info@epanjakent.tj">info@epanjakent.tj</a></section>
+      <section className="footer-column"><h3>ePanjakent</h3><Link to="/">Асосӣ</Link><Link to="/history">Таърих ва фарҳанг</Link><Link to="/tourism">Туризм</Link><Link to="/services">Хизматҳо</Link></section>
+      <section className="footer-column"><h3>Дар тамос бошед</h3><p>Ахбор ва навгониҳои шаҳри Панҷакентро пайгирӣ кунед.</p><a className="footer-mail" href="mailto:info@epanjakent.tj">info@epanjakent.tj</a></section>
     </div>
     <div className="footer-bottom"><span>© {new Date().getFullYear()} ePanjakent — Digital City</span><span>Панҷакент, Тоҷикистон</span></div>
   </footer>
