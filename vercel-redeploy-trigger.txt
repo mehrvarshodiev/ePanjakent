@@ -1,0 +1,2 @@
+Vercel Git Integration redeploy trigger.
+This file can be removed after the deployment is created.
