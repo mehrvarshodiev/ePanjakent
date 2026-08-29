@@ -3,7 +3,7 @@ import { news } from '../data/news'
 
 export default function NewsSection({ compact = false }: { compact?: boolean }) {
   const items = compact ? news.slice(-5).reverse() : news
-  return <section className={`section reveal ${compact ? 'news-home-section' : ''}`}>
+  return <section className={`section reveal visible news-section ${compact ? 'news-home-section' : ''}`}>
     <div className="section-head">
       <div><span className="section-number">01</span><span className="section-label">NEWS BLOG</span><h2>Блоги хабарҳо</h2></div>
       <Link to="/news" className="section-link">Ҳамаи хабарҳо →</Link>
