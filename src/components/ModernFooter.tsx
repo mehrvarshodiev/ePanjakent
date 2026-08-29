@@ -22,9 +22,7 @@ export default function ModernFooter() {
         <p>Панҷакенти рақамӣ — таърих, фарҳанг ва имкониятҳои имрӯзро ба ҳам мепайвандад.</p>
         <div className="footer-socials">{socials.map(([name, icon]) => <a href="#" key={name} aria-label={name} className="social-icon">{icon}</a>)}</div>
       </section>
-      <section className="footer-column"><h3>Навигатсия</h3>{links.map(([name, to]) => <Link key={to} to={to}>{name}</Link>)}</section>
-      <section className="footer-column"><h3>ePanjakent</h3><Link to="/">Асосӣ</Link><Link to="/history">Таърих ва фарҳанг</Link><Link to="/tourism">Туризм</Link><Link to="/services">Хизматҳо</Link></section>
-      <section className="footer-column"><h3>Дар тамос бошед</h3><p>Ахбор ва навгониҳои шаҳри Панҷакентро пайгирӣ кунед.</p><a className="footer-mail" href="mailto:info@epanjakent.tj">info@epanjakent.tj</a></section>
+      <section className="footer-column footer-navigation"><h3>Навигатсия</h3>{links.map(([name, to]) => <Link key={to} to={to}>{name}</Link>)}</section>
     </div>
     <div className="footer-bottom"><span>© {new Date().getFullYear()} ePanjakent — Digital City</span><span>Панҷакент, Тоҷикистон</span></div>
   </footer>
