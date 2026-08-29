@@ -1,0 +1,43 @@
+name: Code Check
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: TypeScript + production build
+        run: npm run build
+
+      - name: Measure build output
+        shell: bash
+        run: |
+          echo "## Build measurement" >> "$GITHUB_STEP_SUMMARY"
+          echo "Build size:" >> "$GITHUB_STEP_SUMMARY"
+          du -sh dist >> "$GITHUB_STEP_SUMMARY"
+          echo "JavaScript files:" >> "$GITHUB_STEP_SUMMARY"
+          find dist -type f -name '*.js' -print0 | xargs -0 du -ch | tail -n 1 >> "$GITHUB_STEP_SUMMARY"
+          echo "CSS files:" >> "$GITHUB_STEP_SUMMARY"
+          find dist -type f -name '*.css' -print0 | xargs -0 du -ch | tail -n 1 >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload production build
+        uses: actions/upload-artifact@v4
+        with:
+          name: epanjakent-build
+          path: dist/
+          retention-days: 7
