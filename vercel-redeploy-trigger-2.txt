@@ -1,0 +1,1 @@
+Trigger Vercel preview deployment after footer update.
