@@ -1,4 +1,4 @@
-import { StrictMode, useEffect, useState } from 'react'
+import { StrictMode, useEffect, useState, type ReactNode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter, Link, Route, Routes, useLocation } from 'react-router-dom'
 import InteractiveServicesPage from './ServicesPage'
@@ -11,7 +11,7 @@ import './premium-footer.css'
 type Lang = 'TJ' | 'RU' | 'EN'
 const languages: Lang[] = ['TJ', 'RU', 'EN']
 
-function Layout({ children }: { children: React.ReactNode }) {
+function Layout({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Lang>('TJ')
   const [menu, setMenu] = useState(false)
   const location = useLocation()
@@ -30,7 +30,7 @@ function ServicesPage(){return <PageHero label="E-GOVERNMENT" title="Хизма�
 function TourismPage(){return <PageHero label="DISCOVER" title="Роҳнамои туристии Панҷакент" intro="Панҷакенти қадим, Саразм ва Ҳафт Кӯлро кашф кунед."><PlacesGrid/><div className="tourism-info"><div><b>Масири тавсияшуда</b><span>Панҷакенти қадим → Саразм → Ҳафт Кӯл</span></div><div><b>Ёрии фаврӣ</b><span>112 · Хадамоти наҷот · беморхона</span></div></div></PageHero>}
 function DigitalPage(){return <PageHero label="DIGITAL PANJAKENT" title="Панҷакенти рақамӣ" intro="Нишондиҳандаҳо, рушди инфрасохтор ва ташаббусҳои smart city."><DigitalSection/></PageHero>}
 function AppealsPage(){return <PageHero label="CIVIC ENGAGEMENT" title="Муроҷиати шаҳрвандон" intro="Масъалаҳоро хабар диҳед, пешниҳод фиристед ва ҳолати муроҷиатро пайгирӣ кунед."><Appeal/><div className="issue-board"><IssueCard title="Роҳи маҳалла таъмирталаб аст" status="Нав"/><IssueCard title="Равшании кӯча барқарор шуд" status="Ҳалшуда"/><IssueCard title="Ҷамъоварии партовҳо" status="Дар раванд"/></div></PageHero>}
-function PageHero({label,title,intro,children}:{label:string;title:string;intro:string;children:React.ReactNode}){return <section className="page-shell"><div className="section page-inner reveal visible"><div className="page-hero"><div className="eyebrow"><span/> {label}</div><h1>{title}</h1><p>{intro}</p></div>{children}</div></section>}
+function PageHero({label,title,intro,children}:{label:string;title:string;intro:string;children:ReactNode}){return <section className="page-shell"><div className="section page-inner reveal visible"><div className="page-hero"><div className="eyebrow"><span/> {label}</div><h1>{title}</h1><p>{intro}</p></div>{children}</div></section>}
 function NewsGrid({compact=false}:{compact?:boolean}){return <div className={`news-grid ${compact?'compact':''}`}>{news.map((item,i)=><article className={`news-card ${i===0?'featured':''}`} key={item.title}><div className="card-image"><img src={item.image} alt=""/><span>{item.tag}</span></div><div className="card-body"><small>29 АВГУСТ 2026</small><h3>{item.title}</h3><p>{item.text}</p><Link to="/news">Хондан <span>↗</span></Link></div></article>)}</div>}
 function ServiceGrid(){return <div className="service-grid">{services.map(([n,title,text,icon])=><article className="service-card" key={title}><div className="service-top"><span className="number">{n}</span><span className="service-icon">{icon}</span></div><h3>{title}</h3><p>{text}</p><Link to="/services">Оғоз кардан <span>→</span></Link></article>)}</div>}
 function PlacesGrid(){return <div className="places-grid">{places.map(([n,title,tag,image])=><article className="place-card" key={title}><img src={image} alt={title}/><div className="place-overlay"/><div className="place-top"><span>{n}</span><span>{tag}</span></div><div className="place-bottom"><h3>{title}</h3><button>Кашф кардан →</button></div></article>)}</div>}
