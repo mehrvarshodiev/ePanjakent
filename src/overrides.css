@@ -120,3 +120,34 @@
   .civic-mobile-menu{margin-top:6px}
   .hero{padding-top:10px}
 }
+
+/* Desktop civic header layout matching the supplied reference screenshot. */
+@media(min-width:901px){
+  .civic-header{position:relative;overflow:visible}
+  .civic-header-top .civic-header-inner{min-height:70px;display:flex;align-items:center;justify-content:flex-end;width:min(100%,calc(100% - 48px))}
+  .civic-socials{margin-left:auto;order:1;gap:7px}
+  .civic-social-icon{width:38px;height:38px;border-radius:6px}
+  .civic-social-icon svg{width:21px;height:21px}
+  .civic-languages{order:2;gap:24px;margin-left:22px}
+  .civic-languages button{font-size:15px;color:rgba(255,255,255,.95);padding:0}
+  .civic-brand-row{height:190px;min-height:190px;max-height:190px}
+  .civic-brand-inner{width:min(100%,calc(100% - 48px));align-items:center}
+  .civic-brand{gap:24px}
+  .civic-emblem{width:124px;height:124px;flex-basis:124px;border-width:5px}
+  .civic-emblem-sun{font-size:24px;top:27px}
+  .civic-emblem-mountain{width:54px;height:7px;bottom:24px}
+  .civic-brand-copy b{font-size:clamp(24px,2.45vw,31px);line-height:1.13;letter-spacing:.005em}
+  .civic-brand-copy small{margin-top:9px;font-size:10px;letter-spacing:.2em}
+  .civic-nav-row{height:62px;min-height:62px;position:relative}
+  .civic-nav-inner{width:min(100%,calc(100% - 48px));min-height:62px;height:62px;gap:0;display:flex;align-items:center;justify-content:flex-start}
+  .civic-desktop-nav{display:flex!important;align-items:center;gap:0;width:100%;height:100%;font-size:13px;font-weight:650;color:rgba(255,255,255,.88);white-space:nowrap}
+  .civic-desktop-nav a{display:inline-flex;align-items:center;height:100%;padding:0 13px;color:#fff!important;position:relative}
+  .civic-desktop-nav a:hover,.civic-desktop-nav a.active{color:#ccfbf1!important;background:rgba(255,255,255,.04)}
+  .civic-desktop-nav a:nth-child(1)::after,.civic-desktop-nav a:nth-child(2)::after,.civic-desktop-nav a:nth-child(3)::after,.civic-desktop-nav a:nth-child(5)::after,.civic-desktop-nav a:nth-child(7)::after{content:"⌄";font-size:15px;margin-left:6px;line-height:1;transform:translateY(-1px);opacity:.9}
+  .civic-search{position:absolute;right:24px;top:-122px;width:min(31vw,455px);height:48px;border:2px solid rgba(255,255,255,.34);margin:0;background:rgba(5,20,32,.24);box-shadow:0 8px 22px rgba(0,0,0,.08)}
+  .civic-search input{font-size:16px;padding:0 15px;color:#fff}
+  .civic-search input::placeholder{color:rgba(255,255,255,.55)}
+  .civic-search button{width:54px;color:#fff}
+  .civic-search button svg{width:26px;height:26px}
+  .civic-menu{display:none!important}
+}
