@@ -15,7 +15,7 @@ export default function NewsSection({ compact = false }: { compact?: boolean }) 
 
       <div className="news-grid">
         {items.map((item) => (
-          <article className="news-card" key={`${item.date}-${item.title}`}>
+          <article className="news-card" key={item.id}>
             <div className="card-image">
               <img src={item.image} alt={item.title} loading="lazy" />
             </div>
@@ -23,7 +23,7 @@ export default function NewsSection({ compact = false }: { compact?: boolean }) 
               <small>{item.tag} · {item.date}</small>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
-              <Link to="/news" className="read-more">Муфассал →</Link>
+              <Link to={`/news/${item.id}`} className="read-more">Муфассал →</Link>
             </div>
           </article>
         ))}
