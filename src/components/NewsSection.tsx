@@ -6,11 +6,9 @@ export default function NewsSection({ compact = false }: { compact?: boolean }) 
 
   return (
     <section className={`section news-section ${compact ? 'news-home-section' : ''}`}>
-      <div className="section-head">
-        <div>
-          <h2 style={{ fontSize: 'clamp(24px, 3vw, 34px)', color: 'rgba(15, 23, 42, 0.72)', margin: 0 }}>Хабархои Панчакент</h2>
-        </div>
-        <Link to="/news" className="section-link" style={{ color: '#2563eb', fontWeight: 700 }}>ҳамаи хабарҳо</Link>
+      <div className="section-head news-section-head">
+        <div />
+        <Link to="/news" className="section-link news-all-link">Ҳамаи хабарҳо <span aria-hidden="true">→</span></Link>
       </div>
 
       <div className="news-grid">
