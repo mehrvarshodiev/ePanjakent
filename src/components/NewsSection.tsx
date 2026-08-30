@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom'
 import { news } from '../data/news'
 
 export default function NewsSection({ compact = false }: { compact?: boolean }) {
-  const items = compact ? news.slice(-5).reverse() : news
+  // Home: show the 5 newest stories. News page: show the complete news array.
+  const items = compact ? [...news].slice(-5).reverse() : news
 
   return (
     <section className={`section news-section ${compact ? 'news-home-section' : ''}`}>
@@ -21,7 +22,7 @@ export default function NewsSection({ compact = false }: { compact?: boolean }) 
             <div className="card-image">
               <img src={item.image} alt={item.title} loading="lazy" />
             </div>
-            <div className="news-card-body">
+            <div className="card-body">
               <small>{item.tag} · {item.date}</small>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
