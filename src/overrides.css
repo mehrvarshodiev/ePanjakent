@@ -103,13 +103,13 @@
   .civic-socials{gap:4px}
   .civic-languages{gap:7px}
   .civic-languages button{font-size:10px;padding:3px 0}
-  .civic-brand-row{height:114px;min-height:114px;max-height:114px}
-  .civic-brand{gap:10px}
-  .civic-emblem{width:64px;height:64px;flex-basis:64px;border-width:3px}
-  .civic-emblem-sun{font-size:13px;top:13px}
-  .civic-emblem-mountain{width:30px;height:4px;bottom:11px}
-  .civic-brand-copy b{font-size:11px;line-height:1.14}
-  .civic-brand-copy small{font-size:6px;letter-spacing:.1em;margin-top:5px}
+  .civic-brand-row{height:110px;min-height:110px;max-height:110px}
+  .civic-brand{gap:9px}
+  .civic-emblem{width:58px;height:58px;flex-basis:58px;border-width:3px}
+  .civic-emblem-sun{font-size:12px;top:12px}
+  .civic-emblem-mountain{width:27px;height:4px;bottom:10px}
+  .civic-brand-copy b{font-size:10px;line-height:1.14}
+  .civic-brand-copy small{font-size:5.5px;letter-spacing:.09em;margin-top:4px}
   .civic-nav-row{min-height:54px}
   .civic-nav-inner{min-height:54px;gap:6px;padding:0 1px}
   .civic-menu{width:40px;height:40px;flex-basis:40px;border-width:3px;border-radius:10px;font-size:20px}
