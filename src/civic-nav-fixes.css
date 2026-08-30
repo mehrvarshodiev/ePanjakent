@@ -1,0 +1,42 @@
+/* Civic desktop navigation: keep search inside the navbar, after the last link. */
+@media (min-width: 901px) {
+  .civic-nav-inner {
+    justify-content: flex-start;
+    gap: 0;
+  }
+
+  .civic-desktop-nav {
+    width: auto !important;
+    flex: 0 1 auto;
+    min-width: 0;
+  }
+
+  .civic-desktop-nav a::after {
+    content: none !important;
+    display: none !important;
+  }
+
+  .civic-search {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    margin-left: 14px !important;
+    flex: 0 1 clamp(220px, 24vw, 360px);
+    width: clamp(220px, 24vw, 360px) !important;
+    height: 44px !important;
+    box-sizing: border-box;
+  }
+
+  .civic-search input {
+    min-width: 0;
+  }
+}
+
+/* Keep arrow decorations out of the desktop navigation at every desktop width. */
+@media (min-width: 901px) {
+  .civic-desktop-nav a::before,
+  .civic-desktop-nav a::after {
+    content: none !important;
+    display: none !important;
+  }
+}
