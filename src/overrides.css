@@ -151,3 +151,17 @@
   .civic-search button svg{width:26px;height:26px}
   .civic-menu{display:none!important}
 }
+
+/* Static civic header: keep the full header in normal document flow on desktop and mobile. */
+.topbar.civic-header{position:static!important;inset:auto!important;padding:0!important;width:100%;margin:0}
+.page-shell{padding-top:0}
+
+/* Desktop civic header height tuned to the supplied reference proportions. */
+@media(min-width:901px){
+  .civic-header-top .civic-header-inner{min-height:112px}
+  .civic-brand-row{height:148px;min-height:148px;max-height:148px}
+  .civic-brand-inner{height:100%}
+  .civic-nav-row{height:62px;min-height:62px}
+  .civic-nav-inner{height:62px;min-height:62px}
+  .civic-search{top:-122px}
+}
