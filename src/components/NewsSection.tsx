@@ -6,12 +6,14 @@ export default function NewsSection({ compact = false }: { compact?: boolean }) 
 
   return (
     <section className={`section news-section ${compact ? 'news-home-section' : ''}`}>
-      <div className="section-head news-section-head" style={{ marginBottom: compact ? 22 : 42 }}>
-        <div />
-        <Link to="/news" className="section-link news-all-link" style={{ color: 'var(--accent)', display: 'inline-flex', alignItems: 'center', gap: 7, fontWeight: 800 }}>
-          Ҳамаи хабарҳо <span aria-hidden="true">→</span>
-        </Link>
-      </div>
+      {compact && (
+        <div className="section-head news-section-head" style={{ marginBottom: 22 }}>
+          <div />
+          <Link to="/news" className="section-link news-all-link" style={{ color: 'var(--accent)', display: 'inline-flex', alignItems: 'center', gap: 7, fontWeight: 800 }}>
+            Ҳамаи хабарҳо <span aria-hidden="true">→</span>
+          </Link>
+        </div>
+      )}
 
       <div className="news-grid">
         {items.map((item) => (
