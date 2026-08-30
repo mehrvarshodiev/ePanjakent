@@ -18,9 +18,9 @@
 
 /* Mobile civic header: keep the branding area fixed when the menu opens. */
 @media(max-width:600px){
-  .civic-brand-row{height:218px;min-height:218px;max-height:218px;overflow:hidden}
-  .civic-brand-inner{height:100%;min-height:0}
-  .civic-brand{height:100%;overflow:hidden}
+  .civic-brand-row{height:120px;min-height:120px;max-height:120px;overflow:hidden;padding:0!important}
+  .civic-brand-inner{height:100%;min-height:0;padding:0!important}
+  .civic-brand{height:100%;overflow:hidden;padding:0!important}
   .civic-brand-copy b{line-height:1.2}
   .civic-nav-row{min-height:112px}
   .civic-nav-inner{min-height:112px}
@@ -28,4 +28,16 @@
   .civic-search input{min-width:0;width:100%}
   .civic-mobile-menu{margin-top:14px}
   .hero{padding-top:22px}
+}
+
+/* Keep the civic branding area compact and stable at every viewport size. */
+.civic-brand-row{height:168px;min-height:168px;max-height:168px;overflow:hidden;padding:0!important}
+.civic-brand-inner{height:100%;min-height:0;padding:0!important}
+.civic-brand{height:100%;overflow:hidden;padding:0!important}
+@media(max-width:900px){
+  .civic-brand-row{height:138px;min-height:138px;max-height:138px}
+  .civic-brand-inner{min-height:0}
+}
+@media(max-width:600px){
+  .civic-brand-row{height:120px;min-height:120px;max-height:120px}
 }
