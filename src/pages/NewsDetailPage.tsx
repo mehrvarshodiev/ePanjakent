@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router-dom'
 import { news } from '../data/news'
 
 const styles = {
-  shell: { padding: '48px 0 88px' },
+  shell: { padding: '88px 0 88px' },
   article: { maxWidth: 980, margin: '0 auto', padding: '0 24px' },
   top: { display: 'flex', flexDirection: 'column' as const, alignItems: 'flex-start', gap: 14, marginBottom: 28 },
   back: { color: 'var(--accent)', fontWeight: 800, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 9 },
@@ -17,7 +17,7 @@ const styles = {
 function ArrowLight() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <path d="M5 12h13M13 6l6 6-6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   )
 }
