@@ -40,3 +40,38 @@
     display: none !important;
   }
 }
+
+/* Mobile civic header: slightly larger civic title, compact search control. */
+@media (max-width: 600px) {
+  .civic-brand-copy {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .civic-brand-copy b {
+    font-size: 13px !important;
+    line-height: 1.15 !important;
+    max-width: 100%;
+  }
+
+  .civic-search {
+    height: 32px !important;
+    flex: 1 1 auto;
+    width: auto !important;
+    max-width: 240px !important;
+  }
+
+  .civic-search input {
+    font-size: 10px !important;
+    padding: 0 6px !important;
+  }
+
+  .civic-search button {
+    width: 34px !important;
+  }
+
+  .civic-search button svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+}
