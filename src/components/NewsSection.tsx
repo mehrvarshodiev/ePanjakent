@@ -21,7 +21,7 @@ export default function NewsSection({ compact = false }: { compact?: boolean }) 
             <div className="card-image">
               <img src={item.image} alt={item.title} loading="lazy" />
             </div>
-            <div className="card-body">
+            <div className="card-body" style={{ paddingTop: 14 }}>
               <small>{item.tag} · {item.date}</small>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
