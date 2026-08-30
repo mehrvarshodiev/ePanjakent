@@ -75,17 +75,3 @@
     height: 16px !important;
   }
 }
-
-/* Replace the sixth navigation label "Рақамӣ" with the requested brand text. */
-.civic-desktop-nav a:nth-child(6),
-.civic-mobile-menu > a:nth-child(6) {
-  font-size: inherit !important;
-}
-
-.civic-desktop-nav a:nth-child(6)::before,
-.civic-mobile-menu > a:nth-child(6)::before {
-  content: "ePanjakent";
-  font-size: inherit;
-  font-weight: inherit;
-  color: inherit;
-}
