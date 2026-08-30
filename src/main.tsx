@@ -4,6 +4,7 @@ import { BrowserRouter, Link, Route, Routes, useLocation } from 'react-router-do
 import InteractiveServicesPage from './ServicesPage'
 import Home from './pages/Home'
 import NewsPage from './pages/NewsPage'
+import NewsDetailPage from './pages/NewsDetailPage'
 import ModernFooter from './components/ModernFooter'
 import './index.css'
 import './overrides.css'
@@ -51,5 +52,5 @@ function Appeal(){return <div className="appeal"><div><div className="eyebrow ac
 function IssueCard({title,status}:{title:string;status:string}){return <article className="issue-card"><span>{status}</span><b>{title}</b><small>Панҷакент · имрӯз</small></article>}
 function SectionHeader({number,label,title,link,light=false}:{number:string;label:string;title:string;link?:string;light?:boolean}){return <div className={`section-head ${light?'light':''}`}><div><div className="eyebrow"><span/> {number} · {label}</div><h2>{title}</h2></div>{link&&<Link to={link.includes('Кашф')?'/history':'/news'} className="all-link">{link}</Link>}</div>}
 function Metric({value,label}:{value:string;label:string}){return <div className="metric"><strong>{value}</strong><span>{label}</span></div>}
-function App(){return <Routes><Route path="/" element={<Home/>}/><Route path="/news" element={<NewsPage/>}/><Route path="/history" element={<HistoryPage/>}/><Route path="/services" element={<ServicesPage/>}/><Route path="/tourism" element={<TourismPage/>}/><Route path="/digital" element={<DigitalPage/>}/><Route path="/appeals" element={<AppealsPage/>}/><Route path="*" element={<Home/>}/></Routes>}
+function App(){return <Routes><Route path="/" element={<Home/>}/><Route path="/news" element={<NewsPage/>}/><Route path="/news/:newsId" element={<NewsDetailPage/>}/><Route path="/history" element={<HistoryPage/>}/><Route path="/services" element={<ServicesPage/>}/><Route path="/tourism" element={<TourismPage/>}/><Route path="/digital" element={<DigitalPage/>}/><Route path="/appeals" element={<AppealsPage/>}/><Route path="*" element={<Home/>}/></Routes>}
 createRoot(document.getElementById('root')!).render(<StrictMode><BrowserRouter><Layout><App/></Layout></BrowserRouter></StrictMode>)
