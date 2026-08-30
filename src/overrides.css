@@ -103,18 +103,18 @@
   .civic-socials{gap:4px}
   .civic-languages{gap:7px}
   .civic-languages button{font-size:10px;padding:3px 0}
-  .civic-brand-row{height:136px;min-height:136px;max-height:136px}
-  .civic-brand{gap:12px}
-  .civic-emblem{width:76px;height:76px;flex-basis:76px;border-width:4px}
-  .civic-emblem-sun{font-size:16px;top:16px}
-  .civic-emblem-mountain{width:36px;height:5px;bottom:13px}
-  .civic-brand-copy b{font-size:13px;line-height:1.16}
-  .civic-brand-copy small{font-size:6px;letter-spacing:.11em;margin-top:6px}
-  .civic-nav-row{min-height:58px}
-  .civic-nav-inner{min-height:58px;gap:7px;padding:0 2px}
-  .civic-menu{width:42px;height:42px;flex-basis:42px;border-width:3px;border-radius:11px;font-size:21px}
-  .civic-search{height:42px;width:auto;flex:1;max-width:none}
-  .civic-search input{font-size:13px;padding:0 9px}
-  .civic-search button{width:44px}
-  .civic-search button svg{width:20px;height:20px}
+  .civic-brand-row{height:114px;min-height:114px;max-height:114px}
+  .civic-brand{gap:10px}
+  .civic-emblem{width:64px;height:64px;flex-basis:64px;border-width:3px}
+  .civic-emblem-sun{font-size:13px;top:13px}
+  .civic-emblem-mountain{width:30px;height:4px;bottom:11px}
+  .civic-brand-copy b{font-size:11px;line-height:1.14}
+  .civic-brand-copy small{font-size:6px;letter-spacing:.1em;margin-top:5px}
+  .civic-nav-row{min-height:54px}
+  .civic-nav-inner{min-height:54px;gap:6px;padding:0 1px}
+  .civic-menu{width:40px;height:40px;flex-basis:40px;border-width:3px;border-radius:10px;font-size:20px}
+  .civic-search{height:40px;width:auto;flex:1;max-width:none}
+  .civic-search input{font-size:12px;padding:0 8px}
+  .civic-search button{width:42px}
+  .civic-search button svg{width:19px;height:19px}
 }
