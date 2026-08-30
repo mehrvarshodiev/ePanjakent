@@ -17,18 +17,30 @@
 @media(max-width:600px){.news-home-section{padding-top:58px;padding-bottom:58px}.news-section .section-head{align-items:flex-start;flex-direction:column;margin-bottom:26px}.news-section .news-grid{grid-template-columns:1fr;gap:14px}.news-section .news-card>img{height:210px}.news-section .news-card-body{padding:18px}.news-section .news-card-body h3{font-size:19px}}
 
 /* Mobile civic header: keep the branding area fixed when the menu opens. */
+.civic-desktop-nav,.civic-desktop-nav a{color:#fff!important}
+.civic-menu{display:none}
+.civic-nav-inner{padding-left:0;padding-right:0}
+.civic-nav-row{min-height:74px}
+.civic-nav-inner{min-height:74px;gap:16px}
+.civic-search{height:44px;width:min(360px,34vw)}
+@media(max-width:900px){
+  .civic-menu{display:grid}
+  .civic-nav-row{min-height:72px}
+  .civic-nav-inner{min-height:72px;gap:8px;padding:0 4px}
+  .civic-search{height:42px;width:min(100%,360px)}
+}
 @media(max-width:600px){
-  .civic-brand-row{height:218px;min-height:218px;max-height:218px;overflow:hidden}
+  .civic-brand-row{height:178px;min-height:178px;max-height:178px;overflow:hidden}
   .civic-brand-inner{height:100%;min-height:0}
   .civic-brand{height:100%;overflow:hidden}
   .civic-brand-copy b{line-height:1.2}
-  .civic-nav-row{min-height:92px}
-  .civic-nav-inner{min-height:92px;padding:0 2px;gap:7px}
-  .civic-menu{width:40px;height:40px;font-size:20px}
-  .civic-search{width:min(78vw,520px);max-width:calc(100vw - 112px);height:40px}
-  .civic-search input{min-width:0;width:100%;font-size:13px;padding:0 9px}
-  .civic-search button{width:44px}
-  .civic-search button svg{width:19px;height:19px}
-  .civic-mobile-menu{margin-top:12px}
-  .hero{padding-top:16px}
+  .civic-nav-row{min-height:64px}
+  .civic-nav-inner{min-height:64px;padding:0 1px;gap:6px}
+  .civic-menu{width:38px;height:38px;font-size:19px}
+  .civic-search{width:auto;flex:1;height:38px;max-width:none}
+  .civic-search input{min-width:0;width:100%;font-size:13px;padding:0 8px}
+  .civic-search button{width:40px}
+  .civic-search button svg{width:18px;height:18px}
+  .civic-mobile-menu{margin-top:8px}
+  .hero{padding-top:12px}
 }
