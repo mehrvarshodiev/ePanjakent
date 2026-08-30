@@ -1,6 +1,14 @@
-import { Link } from 'react-router-dom'
 import NewsSection from '../components/NewsSection'
 
 export default function NewsPage() {
-  return <main className="page-shell"><section className="section reveal visible"><div className="section-head"><div><span className="section-number">01</span><span className="section-label">NEWS BLOG</span><h1>Блоги хабарҳо</h1></div><Link to="/" className="section-link">Ба саҳифаи асосӣ →</Link></div><NewsSection /></section></main>
+  return (
+    <main className="page-shell news-page-shell">
+      <section className="section page-hero news-page-hero reveal visible">
+        <div className="eyebrow accent"><span /> ХАБАРҲО</div>
+        <h1>Хабарҳои<br /><em>Панҷакент</em></h1>
+        <p>Хабарҳои нав ва муҳимми шаҳри Панҷакентро дар як ҷо пайгирӣ кунед.</p>
+      </section>
+      <NewsSection />
+    </main>
+  )
 }
