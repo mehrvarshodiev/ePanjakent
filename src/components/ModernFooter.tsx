@@ -1,20 +1,18 @@
 import { Link } from 'react-router-dom'
 
 const siteLinks = [['Асосӣ','/'],['Хабарҳо','/news'],['Таърих ва фарҳанг','/history'],['Туризм','/tourism'],['Роҳнамо','/services'],['Тамос','/appeals']]
-const resourceLinks = [['Галерея','/tourism'],['Блог','/news'],['Саволҳои зиёд додашаванда (FAQ)','/services'],['Сиёсати махфият','#privacy']]
 const socials = [
  {name:'Instagram',color:'text-[#E1306C]',path:'M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5ZM17.5 6a1.25 1.25 0 1 1-1.25 1.25A1.25 1.25 0 0 1 17.5 6Z'},
  {name:'Facebook',color:'text-[#1877F2]',path:'M13.5 22v-9h3l.5-3.5h-3.5V7.25c0-1 .28-1.75 1.8-1.75H17V2.36A17.2 17.2 0 0 0 14.5 2C12 2 10.5 3.5 10.5 6v3.5H8V13h2.5v9h3Z'},
  {name:'Telegram',color:'text-[#229ED9]',path:'m21.7 3.3-3.1 17.1c-.2 1.2-.9 1.5-1.8.9l-5-3.7-2.4 2.3c-.3.3-.5.5-1 .5l.4-5.1 9.3-8.4c.4-.4-.1-.6-.6-.2L6 13.9 1 12.3c-1.1-.3-1.1-1.1.2-1.6L20.7 3c.9-.3 1.7.2 1 0.3Z'},
- {name:'YouTube',color:'text-[#FF0000]',path:'M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.5 15.5v-7l6 3.5-6 3.5Z'}
+ {name:'YouTube',color:'text-[#FF0000]',path:'M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8ZM9.5 15.5v-7l6 3.5-6 3.5Z'}
 ]
 function Icon({path}:{path:string}){return <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor" className="h-5 w-5"><path d={path}/></svg>}
 
 export default function ModernFooter(){return <footer className="!bg-white !text-slate-800 border-t border-slate-200">
- <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-12 sm:px-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-10 lg:py-14">
+ <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-12 sm:px-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-10 lg:py-14">
   <section className="lg:pr-6"><Link to="/" className="group inline-flex items-center gap-3 text-slate-900 no-underline"><span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-teal-400 to-sky-500 text-lg font-black tracking-tighter text-slate-950 shadow-sm transition duration-300 group-hover:-translate-y-1">eP</span><span><b className="block text-[20px] font-bold tracking-tight text-slate-900">ePanjakent</b><small className="mt-1 block text-[10px] font-extrabold uppercase tracking-[.16em] text-slate-500">Digital City</small></span></Link><p className="mt-5 max-w-sm text-sm leading-7 text-slate-600">Портали иттилоотӣ ва сайёҳии Панҷакент — таърих, фарҳанг, сайёҳӣ ва имкониятҳои рақамии шаҳр.</p></section>
   <section className="flex flex-col items-start gap-3"><h3 className="mb-2 text-sm font-bold text-slate-900">Харитаи сайт</h3>{siteLinks.map(([name,to])=><Link key={name} to={to} className="text-sm leading-6 text-slate-600 no-underline transition-all duration-200 hover:translate-x-1 hover:text-slate-900">{name}</Link>)}</section>
-  <section className="flex flex-col items-start gap-3"><h3 className="mb-2 text-sm font-bold text-slate-900">Захираҳо</h3>{resourceLinks.map(([name,to])=><Link key={name} to={to} className="text-sm leading-6 text-slate-600 no-underline transition-all duration-200 hover:translate-x-1 hover:text-slate-900">{name}</Link>)}</section>
   <section className="flex flex-col items-start"><h3 className="mb-4 text-sm font-bold text-slate-900">Бо мо тамос гиред</h3><div className="space-y-2 text-sm leading-6 text-slate-600"><p>Почтаи электронӣ</p><p>Телефон</p></div><div className="mt-5 flex items-center gap-2.5">{socials.map(s=><a href="#" key={s.name} aria-label={s.name} title={s.name} className={`grid h-9 w-9 place-items-center rounded-xl border border-slate-200 bg-white ${s.color} shadow-sm transition-all duration-300 hover:-translate-y-1 hover:scale-105 hover:border-slate-300 hover:shadow-md`}><Icon path={s.path}/></a>)}</div></section>
  </div><div className="mx-auto max-w-7xl border-t border-slate-200 px-6 py-5 sm:px-8"><p className="text-center text-xs leading-6 text-slate-500">2026 ш. Панҷакент - Ҳамаи ҳуқуқҳо маҳфузанд!</p></div>
  </footer>}
