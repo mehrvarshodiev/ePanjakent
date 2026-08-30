@@ -71,11 +71,11 @@ function Layout({ children }: { children: ReactNode }) {
       <div className="civic-nav-row">
         <div className="civic-header-inner civic-nav-inner">
           <button className="civic-menu" onClick={() => setMenu(!menu)} aria-label="Кушодани меню">{menu ? '×' : '☰'}</button>
-          <nav className="desktop-nav civic-desktop-nav"><Link to="/">Асосӣ</Link><Link to="/news">Хабарҳо</Link><Link to="/history">Таърих ва фарҳанг</Link><Link to="/tourism">Туризм</Link><Link to="/services">Хизматҳо</Link><Link to="/digital">Рақамӣ</Link><Link to="/appeals">Муроҷиатҳо</Link></nav>
+          <nav className="desktop-nav civic-desktop-nav"><Link to="/">Асосӣ</Link><Link to="/news">Хабарҳо</Link><Link to="/history">Таърих ва фарҳанг</Link><Link to="/tourism">Туризм</Link><Link to="/services">Хизматрасониҳо</Link><Link to="/digital">ePanjakent</Link><Link to="/appeals">Муроҷиатҳо</Link></nav>
           <form className="civic-search" onSubmit={submitSearch}><input value={search} onChange={e => setSearch(e.target.value)} placeholder="Ҷустуҷӯ" aria-label="Ҷустуҷӯ"/><button type="submit" aria-label="Ҷустуҷӯ"><svg width="23" height="23" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" strokeWidth="2"/><path d="m16 16 5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg></button></form>
         </div>
       </div>
-      {menu && <div className="mobile-menu civic-mobile-menu"><Link to="/">Асосӣ</Link><Link to="/news">Хабарҳо</Link><Link to="/history">Таърих ва фарҳанг</Link><Link to="/tourism">Туризм</Link><Link to="/services">Хизматҳо</Link><Link to="/digital">Рақамӣ</Link><Link to="/appeals">Муроҷиатҳо</Link><button className="mobile-language" onClick={nextLang} aria-label="Change language">🌐 <strong>{lang}</strong></button></div>}
+      {menu && <div className="mobile-menu civic-mobile-menu"><Link to="/">Асосӣ</Link><Link to="/news">Хабарҳо</Link><Link to="/history">Таърих ва фарҳанг</Link><Link to="/tourism">Туризм</Link><Link to="/services">Хизматрасониҳо</Link><Link to="/digital">ePanjakent</Link><Link to="/appeals">Муроҷиатҳо</Link></div>}
     </header>
     <main>{children}</main><ModernFooter />
   </div>
