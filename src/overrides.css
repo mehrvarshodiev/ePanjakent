@@ -164,4 +164,14 @@
   .civic-nav-row{height:62px;min-height:62px}
   .civic-nav-inner{height:62px;min-height:62px}
   .civic-search{top:-122px}
+
+  /* Keep the civic title clear of the search field in the header. */
+  .civic-brand-copy{min-width:0;max-width:680px}
+  .civic-brand-copy b{display:block;max-width:680px}
+}
+
+/* Mobile/tablet safety: prevent civic brand text from crossing into the search controls. */
+@media(max-width:900px){
+  .civic-brand-copy{min-width:0;max-width:100%;}
+  .civic-brand-copy b{display:block;overflow-wrap:anywhere;}
 }
